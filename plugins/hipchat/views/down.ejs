@@ -1,1 +1,1 @@
-[Down] "<%= check.name %>" just went down on <%= moment(checkEvent.timestamp).format('D MMM YY,HH:mm:ss') %>
+[Down] <a href='<%= url %>/dashboard/checks/<%= check._id %>?type=hour&date=<%= checkEvent.timestamp.valueOf() %>'>"<%= check.name %>"</a> just went down on <%= moment(checkEvent.timestamp).format('D MMM YY,HH:mm:ss') %>

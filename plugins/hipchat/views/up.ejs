@@ -1,5 +1,7 @@
 <% if (checkEvent.downtime) { -%>
+[Restarted] <a href='<%= url %>/dashboard/checks/<%= check._id %>?type=hour&date=<%= checkEvent.timestamp.valueOf() %>'>"<%= check.name %>"</a> was restarted on <%= moment(checkEvent.timestamp).format('D MMM YY,HH:mm:ss') %>
 [Up] "<%= check.name %>" went back up on <%= moment(checkEvent.timestamp).format('D MMM YY,HH:mm:ss') %> after <%= moment.duration(checkEvent.downtime).humanize() %> of downtime,
 <% } else { -%>
+[Restarted] <a href='<%= url %>/dashboard/checks/<%= check._id %>?type=hour&date=<%= checkEvent.timestamp.valueOf() %>'>"<%= check.name %>"</a> was restarted on <%= moment(checkEvent.timestamp).format('D MMM YY,HH:mm:ss') %>
 [Up] "<%= check.name %>" is now up on <%= moment(checkEvent.timestamp).format('D MMM YY,HH:mm:ss') %>
 <% }%>

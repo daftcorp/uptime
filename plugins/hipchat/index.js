@@ -26,7 +26,7 @@ var CheckEvent = require('../../models/checkEvent');
 var ejs        = require('ejs');
 var HipChatClient = require('node-hipchat');
  
-exports.initWebApp = function() {
+exports.initWebApp = function(options) {
   console.log('foo');
 	var client =  new HipChatClient(config.token); // Initialize a new HipChatClient with the HipChat Token defined in the yaml file
   var templateDir = __dirname + '/views/';
@@ -38,7 +38,7 @@ exports.initWebApp = function() {
       var renderOptions = { 
         check: check, 
         checkEvent: checkEvent, 
-        url: config.dashboardUrl, 
+        url: options.config.url, 
         moment: moment, 
         filename: filename
       };

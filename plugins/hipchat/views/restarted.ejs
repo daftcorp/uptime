@@ -1,1 +1,1 @@
-[Restarted] "<%= check.name %>" was restarted on <%= moment(checkEvent.timestamp).format('D MMM YY,HH:mm:ss') %>
+[Restarted] <a href='<%= url %>/dashboard/checks/<%= check._id %>?type=hour&date=<%= checkEvent.timestamp.valueOf() %>'>"<%= check.name %>"</a> was restarted on <%= moment(checkEvent.timestamp).format('D MMM YY,HH:mm:ss') %>
