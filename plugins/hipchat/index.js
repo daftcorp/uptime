@@ -38,7 +38,7 @@ exports.initWebApp = function(options) {
       var renderOptions = { 
         check: check, 
         checkEvent: checkEvent, 
-        url: options.config.url, 
+        url: options.config.hipchat.dashboardUrl, 
         moment: moment, 
         filename: filename
       };
@@ -51,7 +51,7 @@ exports.initWebApp = function(options) {
       var lines = ejs.render(fs.readFileSync(filename, 'utf8'), renderOptions);
 
       console.log('Notified event by HipChat: Check ' + check.name + ' ' + checkEvent.message);
-
+      console.log(lines);
 			var hipchatMessageParams = {
 				room: config.room_id,
 				from: config.from,
